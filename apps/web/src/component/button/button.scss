@@ -1,0 +1,102 @@
+@use "abstracts" as *;
+
+.extranet-button {
+  border: 1px solid transparent;
+  max-width: max-content;
+  font-weight: 700;
+  cursor: pointer;
+
+  &-disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+  }
+
+  /***                       ***/
+  /***      BOX SHADOW       ***/
+  /***                       ***/
+  &-primary:not(.extranet-button-disabled) {
+    box-shadow: $dyneff-shadow-primary;
+  }
+
+  &-accent:not(.extranet-button-disabled) {
+    box-shadow: $dyneff-shadow-accent;
+  }
+  /***                       ***/
+  /***      BOX SHADOW       ***/
+  /***                       ***/
+
+  &-primary {
+    background-color: $dyneff-bg-primary;
+    color: $dyneff-bg-surface;
+
+    &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-primary-hover;
+    }
+  }
+
+  &-secondary {
+    background-color: $dyneff-bg-surface;
+    color: $dyneff-bg-primary-deep;
+    border-color: $dyneff-bg-line;
+
+    &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-primary-tint;
+      border-color: $dyneff-bg-primary;
+    }
+  }
+
+  &-accent {
+    background-color: $dyneff-bg-orange;
+    color: $dyneff-bg-surface;
+
+    &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-orange-hover;
+    }
+  }
+
+  &-dark {
+    background-color: $dyneff-text-ink;
+    color: $dyneff-bg-surface;
+
+    &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-dark-hover;
+    }
+  }
+
+  &-ghost {
+    background-color: $dyneff-bg-surface;
+    color: $dyneff-bg-primary-deep;
+
+    &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-primary-soft;
+    }
+  }
+
+  &-s {
+    height: 34px;
+    padding: 0 14px;
+    font-size: 0.8125rem;
+    border-radius: 10px;
+  }
+
+  &-m {
+    height: 44px;
+    padding: 0 20px;
+    font-size: 0.9375rem;
+    border-radius: 12px;
+  }
+
+  &-l {
+    height: 52px;
+    padding: 0 26px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  &-xl {
+    height: 62px;
+    padding: 0 34px;
+    font-size: 1.0625rem;
+    border-radius: 14px;
+  }
+}
