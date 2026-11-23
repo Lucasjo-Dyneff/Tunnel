@@ -1,0 +1,4 @@
+// Point d'entrée des outils Sass (aucune sortie CSS).
+// Usage dans un module : @use "abstracts" as *;
+@forward "variables";
+@forward "mixins";

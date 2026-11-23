@@ -1,0 +1,33 @@
+# dépendances
+node_modules
+.pnp
+.pnp.*
+
+# builds
+dist
+.next
+out
+build
+*.tsbuildinfo
+next-env.d.ts
+
+# turbo
+.turbo
+
+# prisma (client généré)
+packages/database/src/generated
+
+# tests
+coverage
+
+# env : seuls les .env.example sont versionnés
+.env
+.env.*
+!.env.example
+
+# divers
+.DS_Store
+*.pem
+*.log
+.vercel
+.idea

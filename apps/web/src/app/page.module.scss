@@ -1,0 +1,19 @@
+@use "abstracts" as *;
+
+.main {
+  @include container;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: $space-lg;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  @include up(md) {
+    font-size: 2rem;
+  }
+}

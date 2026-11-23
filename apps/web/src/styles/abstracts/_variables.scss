@@ -1,0 +1,25 @@
+// Variables Sass (compilation). Les couleurs de thème sont exposées en
+// custom properties dans globals.scss pour gérer le mode sombre.
+
+// Breakpoints
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+// Espacements
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+$space-xl: 4rem;
+
+// Typographie
+$font-sans: var(--font-geist-sans), system-ui, sans-serif;
+$font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+// Divers
+$radius: 0.5rem;
+$container-max: 72rem;

@@ -1,0 +1,15 @@
+// Schéma Prisma — https://www.prisma.io/docs/orm/prisma-schema
+// L'URL de connexion est fournie par prisma.config.ts (variable DATABASE_URL).
+
+generator client {
+  provider               = "prisma-client"
+  output                 = "../src/generated/prisma"
+  moduleFormat           = "esm"
+  importFileExtension    = "js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Ajoutez vos modèles ici, puis lancez `pnpm db:migrate`.
