@@ -1,0 +1,118 @@
+// Couleurs de la charte Dyneff (variables Sass, sans sortie CSS).
+// Usage : @use "abstracts" as *;
+
+// ============================================
+//               BACKGROUND
+// ============================================
+
+// Background et hover
+$dyneff-bg-primary: #0098d2;
+$dyneff-bg-primary-hover: #0087bb;
+
+$dyneff-bg-orange: #f39200;
+$dyneff-bg-orange-hover: #db8300;
+
+$dyneff-bg-dark-hover: #0d3357;
+
+// Clic maintenu sur le bouton
+$dyneff-bg-primary-active: #0074a1;
+
+// Textes et liens
+$dyneff-bg-primary-deep: #05688c;
+
+// Pastille icône et fond de badge
+$dyneff-bg-primary-soft: #e4f4fb;
+
+// Carte sélectionnée, bulle d'information
+$dyneff-bg-primary-tint: #f1fafe;
+
+// Anneau de focus, halo d'un élément actif
+$dyneff-primary-12: #0098d21f;
+
+// Cartes, panneaux, en-tête collant
+$dyneff-bg-surface: #ffffff;
+
+// Fond général de page
+$dyneff-bg-canvas: #f4f7f9;
+
+// Fond d'un panneau secondaire
+$dyneff-surface-warm: #fbfdfe;
+
+// Bordures de champs et séparateurs
+$dyneff-bg-line: #e2ebf1;
+
+// Séparateurs discrets, ombres internes
+$dyneff-bg-line-soft: #eef4f8;
+
+// --- COULEURS CHAUDES ---
+
+// Dégradé de progression, pastilles d'étape
+$dyneff-bg-sun: #ffb020;
+
+// Tuile d'icône d'un champ, bouton rappel
+$dyneff-bg-peach: #fff1e0;
+
+// Fond d'un champ au repos
+$dyneff-bg-cream: #f8fafc;
+
+// Accent chaud ponctuel
+$dyneff-bg-coral: #ff7043;
+
+// Texte orange accessible sur fond clair
+$dyneff-text-orange: #8a4a00;
+
+// Bordure d'un encart d'accroche
+$dyneff-orange-line: #fbd9a5;
+
+// --- COULEURS SUCCESS ---
+
+// Pastille d'étape terminée, coche de champ valide
+$dyneff-bg-green: #0fa678;
+
+// Texte de confirmation, label d'étape passée
+$dyneff-bg-green-deep: #0b7c5a;
+
+// Halo de la coche, bloc « Compteur trouvé »
+$dyneff-bg-green-soft: #e9f9f2;
+
+// Bordure d'un champ valide
+$dyneff-green-line: #b6ecd9;
+
+// --- COULEURS ETATS ---
+
+// Bordure et texte d'un champ invalide
+$dyneff-bg-error: #e11d48;
+
+// Halo d'erreur
+$dyneff-bg-error-soft: #fef2f4;
+
+// Fiabilité moyenne, vigilance
+$dyneff-bg-warning: #f59e0b;
+
+// Fond d'avertissement doux
+$dyneff-bg-warning-soft: #fffbeb;
+
+// ============================================
+//               TEXTES
+// ============================================
+
+// Titres, montants, texte fort
+$dyneff-text-ink: #0e2a3f;
+
+// Paragraphes courants
+$dyneff-text-soft: #3a505f;
+
+// Sous-titres, aides, mentions
+$dyneff-text-muted: #6d7b85;
+
+// Placeholders, étapes inactives
+$dyneff-text-muted-light: #9ba6ad;
+
+// Placeholders, étapes inactives
+$dyneff-text-on-primary: #ffffff;
+
+// ============================================
+//               RAYONS ET OMBRES
+// ============================================
+$dyneff-shadow-primary: 0 16px 32px -16px #0098d280;
+$dyneff-shadow-accent: 0 14px 28px -16px #f39200b3;

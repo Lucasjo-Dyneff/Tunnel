@@ -1,11 +1,11 @@
-@import "tailwindcss";
+@use "abstracts" as *;
 
 h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.03em;
-  color: #0e2a3f;
+  color: $dyneff-text-ink;
   font-family: Plus Jakarta Sans;
 }
 
@@ -14,7 +14,7 @@ h2 {
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.025em;
-  color: #0e2a3f;
+  color: $dyneff-text-ink;
 }
 
 h3 {
@@ -22,7 +22,7 @@ h3 {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0e2a3f;
+  color: $dyneff-text-ink;
 }
 
 h4 {
@@ -30,7 +30,7 @@ h4 {
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.015em;
-  color: #0e2a3f;
+  color: $dyneff-text-ink;
 }
 
 h5 {
@@ -38,7 +38,7 @@ h5 {
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.01em;
-  color: #0e2a3f;
+  color: $dyneff-text-ink;
 }
 
 h6 {
@@ -47,70 +47,70 @@ h6 {
   line-height: 1.4;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #6d7b85;
+  color: $dyneff-text-muted;
 }
 
 .dyneff-p-xl {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.55;
-  color: #3a505f;
+  color: $dyneff-text-soft;
 }
 
 .dyneff-p-l {
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #3a505f;
+  color: $dyneff-text-soft;
 }
 
 .dyneff-p {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #3a505f;
+  color: $dyneff-text-soft;
 }
 
 .dyneff-p-s {
   font-size: 0.9375rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #3a505f;
+  color: $dyneff-text-soft;
 }
 
 .dyneff-p-xs {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.55;
-  color: #6d7b85;
+  color: $dyneff-text-muted;
 }
 
 .dyneff-subtitle-l {
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #6d7b85;
+  color: $dyneff-text-muted;
 }
 
 .dyneff-subtitle-m {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #6d7b85;
+  color: $dyneff-text-muted;
 }
 
 .dyneff-subtitle-s {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.45;
-  color: #6d7b85;
+  color: $dyneff-text-muted;
 }
 
 .dyneff-label {
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.4;
-  color: #0e2a3f;
+  color: $dyneff-text-ink;
 }
 
 .dyneff-eyebrow {
@@ -118,7 +118,7 @@ h6 {
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: #8a4a00;
+  color: $dyneff-text-orange;
 }
 
 .dyneff-price {
@@ -126,5 +126,5 @@ h6 {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: #0e2a3f;
+  color: $dyneff-text-ink;
 }
