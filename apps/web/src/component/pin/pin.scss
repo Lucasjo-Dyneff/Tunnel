@@ -1,0 +1,45 @@
+@use "abstracts" as *;
+
+.extranet-pin {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: $font-sans;
+  width: max-content;
+  border: 1px solid transparent;
+}
+
+.extranet-pin-info {
+  background-color: $dyneff-bg-primary-soft;
+  color: $dyneff-bg-primary-deep;
+  border-color: #cbeaf7;
+}
+
+.extranet-pin-success {
+  background-color: $dyneff-bg-green-soft;
+  color: $dyneff-bg-green-deep;
+  border-color: $dyneff-green-line;
+}
+
+.extranet-pin-recommanded {
+  background-color: #fff4e3;
+  color: $dyneff-text-orange;
+  border-color: $dyneff-orange-line;
+}
+
+.extranet-pin-incoming {
+  background-color: #f1f5f8;
+  color: $dyneff-text-muted;
+  border-color: $dyneff-bg-line;
+}
+
+.extranet-pin-draft {
+  background-color: $dyneff-text-ink;
+  color: $dyneff-bg-surface;
+}
+
+.extranet-pin-new {
+  background-color: $dyneff-bg-orange;
+  color: $dyneff-bg-surface;
+}
