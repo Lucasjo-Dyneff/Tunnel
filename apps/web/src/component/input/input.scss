@@ -1,0 +1,216 @@
+@use "abstracts" as *;
+
+$input-padding-x: 14px;
+
+.extranet-input {
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    color: $dyneff-text-ink;
+    font-family: $font-sans;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  &-wrapper {
+    display: grid;
+    grid-template-areas: "field";
+    width: 100%;
+    max-width: 100%;
+    --input-logo-success-size: 22px;
+
+    > * {
+      grid-area: field;
+    }
+
+    &-s {
+      --input-logo-success-size: 18px;
+    }
+
+    &-m {
+      --input-logo-success-size: 22px;
+    }
+
+    &-l {
+      --input-logo-success-size: 24px;
+    }
+
+    &-xl {
+      --input-logo-success-size: 26px;
+    }
+
+    &-field {
+      width: 100%;
+      height: 56px;
+      padding: 0 $input-padding-x 0 1rem;
+      border-radius: 16px;
+      border: 2px solid transparent;
+      background: transparent;
+      outline: none;
+      color: $dyneff-text-ink;
+      font-weight: 500;
+      padding-right: calc(
+        #{$input-padding-x} + var(--input-logo-success-size) + 10px
+      );
+      font-family: $font-inter;
+      transition:
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+
+      &-padding {
+        &-s {
+          padding-left: 3rem;
+        }
+
+        &-m,
+        &-l {
+          padding-left: 3.35rem;
+        }
+
+        &-xl {
+          padding-left: 4rem;
+        }
+      }
+
+      &-success {
+        border-color: $dyneff-green-line;
+        background-color: $dyneff-bg-green-field;
+
+        &:focus {
+          box-shadow: $dyneff-shadow-info;
+        }
+      }
+
+      &-error {
+        border-color: $dyneff-bg-error;
+        background-color: $dyneff-bg-error-field;
+
+        &:focus {
+          box-shadow: $dyneff-shadow-error;
+        }
+      }
+
+      &-info {
+        border-color: $dyneff-bg-line;
+        background-color: $dyneff-bg-cream;
+
+        &:focus {
+          box-shadow: $dyneff-shadow-info;
+          border-color: $dyneff-bg-orange;
+        }
+      }
+
+      &-s {
+        height: 48px;
+        border-radius: 13px;
+        font-size: 0.9375rem;
+      }
+
+      &-m {
+        height: 56px;
+        border-radius: 16px;
+        font-size: 1rem;
+      }
+
+      &-l {
+        height: 62px;
+        border-radius: 16px;
+        font-size: 1.0625rem;
+      }
+
+      &-xl {
+        height: 70px;
+        border-radius: 18px;
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  &-logSuccess {
+    justify-self: end;
+    align-self: center;
+    margin-right: $input-padding-x;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--input-logo-success-size);
+    height: var(--input-logo-success-size);
+    border-radius: 50%;
+    background-color: $dyneff-bg-green;
+    color: $dyneff-bg-surface;
+    pointer-events: none;
+  }
+
+  &-logo {
+    justify-self: start;
+    align-self: center;
+    margin-right: $input-padding-x;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.75rem;
+    border-radius: 9px;
+    background-color: $dyneff-bg-peach;
+    color: $dyneff-text-orange;
+    pointer-events: none;
+
+    &-s {
+      width: 30px;
+      height: 30px;
+    }
+
+    &-m {
+      width: 36px;
+      height: 36px;
+    }
+
+    &-l {
+      width: 36px;
+      height: 36px;
+    }
+
+    &-xl {
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+  &-message {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+
+    &-success {
+      color: $dyneff-bg-green;
+    }
+    &-error {
+      color: $dyneff-bg-error;
+    }
+    &-info {
+      color: $dyneff-text-muted;
+    }
+
+    &-s {
+      font-size: 0.75rem;
+    }
+
+    &-m {
+      font-size: 0.8125rem;
+    }
+
+    &-l {
+      font-size: 0.875rem;
+    }
+
+    &-xl {
+      font-size: 0.9375rem;
+    }
+  }
+}

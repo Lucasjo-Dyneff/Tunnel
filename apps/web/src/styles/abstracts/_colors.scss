@@ -1,6 +1,8 @@
 // Couleurs de la charte Dyneff (variables Sass, sans sortie CSS).
 // Usage : @use "abstracts" as *;
 
+@use "sass:math";
+
 // ============================================
 //               BACKGROUND
 // ============================================
@@ -78,6 +80,9 @@ $dyneff-bg-green-soft: #e9f9f2;
 // Bordure d'un champ valide
 $dyneff-green-line: #b6ecd9;
 
+// Fond d'un champ valide
+$dyneff-bg-green-field: #f9fffc;
+
 // --- COULEURS ETATS ---
 
 // Bordure et texte d'un champ invalide
@@ -85,6 +90,9 @@ $dyneff-bg-error: #e11d48;
 
 // Halo d'erreur
 $dyneff-bg-error-soft: #fef2f4;
+
+// Fond d'un champ invalide
+$dyneff-bg-error-field: #fffafb;
 
 // Fiabilité moyenne, vigilance
 $dyneff-bg-warning: #f59e0b;
@@ -116,3 +124,12 @@ $dyneff-text-on-primary: #ffffff;
 // ============================================
 $dyneff-shadow-primary: 0 16px 32px -16px #0098d280;
 $dyneff-shadow-accent: 0 14px 28px -16px #f39200b3;
+
+// Opacité des halos de champ : 1a en hexadécimal = 26/255 ≈ 10 %
+$dyneff-halo-alpha: math.div(26, 255);
+
+// Halo autour d'un champ invalide
+$dyneff-shadow-error: 0 0 0 4px rgba($dyneff-bg-error, $dyneff-halo-alpha);
+
+// Halo autour d'un champ d'aide (info) — actuellement identique à l'erreur
+$dyneff-shadow-info: 0 0 0 4px rgba($dyneff-bg-error, $dyneff-halo-alpha);
