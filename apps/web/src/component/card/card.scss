@@ -1,0 +1,76 @@
+@use "abstracts" as *;
+
+.extranet-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: 1.5px solid $dyneff-bg-line;
+  background-color: transparent;
+  cursor: pointer;
+
+  &__select {
+    border: 1px solid $dyneff-bg-primary;
+    background-color: $dyneff-bg-primary-tint;
+    box-shadow: 0 0 0 3px $dyneff-primary-12;
+  }
+
+  &-element {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      letter-spacing: -0.01em;
+      color: $dyneff-text-ink;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    &__subtitle {
+      font-family: $font-inter;
+      color: $dyneff-text-muted;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      line-height: 1.55;
+      margin-top: 0.125rem;
+    }
+  }
+
+  &-check,
+  &-nocheck {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: $dyneff-bg-primary;
+    color: $dyneff-text-on-primary;
+  }
+
+  &-nocheck {
+    background-color: $dyneff-bg-cream;
+    border: 1px solid #e6d8c6;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 10px;
+    color: $dyneff-text-orange;
+    background-color: $dyneff-bg-peach;
+
+    &__select {
+      color: $dyneff-bg-surface;
+      background-color: $dyneff-bg-primary;
+    }
+  }
+}
