@@ -293,7 +293,13 @@ export default function Housing() {
                   <Zap size={14} />
                 </div>
                 <span className="app-housing-info-simulation__element dyneff-p-s">
-                  Électricité
+                  {energy === "electricity"
+                    ? "Électricité"
+                    : energy === "gas"
+                      ? "Gaz"
+                      : energy === "dual"
+                        ? "Les deux"
+                        : "━━"}
                 </span>
               </div>
 
@@ -302,7 +308,11 @@ export default function Housing() {
                   <RefreshCcw size={14} />
                 </div>
                 <span className="app-housing-info-simulation__element dyneff-p-s">
-                  Changement de fournisseur
+                  {situation === "change"
+                    ? "Changement de fournisseur"
+                    : situation === "movedIn"
+                      ? "J'emménage"
+                      : "━━"}
                 </span>
               </div>
 
@@ -311,7 +321,7 @@ export default function Housing() {
                   <MapPin size={14} />
                 </div>
                 <span className="app-housing-info-simulation__element dyneff-p-s">
-                  Linky
+                  {energy === null ? "━━" : "Linky"}
                 </span>
               </div>
             </div>
