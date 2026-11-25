@@ -1,0 +1,79 @@
+@use "abstracts" as *;
+
+$checkbox-size: 1.375rem;
+
+.extranet-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+
+  &-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  &-box {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    border: 1.5px solid $dyneff-bg-line;
+    border-radius: 6px;
+    background-color: $dyneff-bg-surface;
+    color: $dyneff-text-on-primary;
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+
+    svg {
+      opacity: 0;
+      transform: scale(0.6);
+      transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+    }
+  }
+
+  &:hover &-box {
+    border-color: $dyneff-bg-primary;
+  }
+
+  &-input:focus-visible + &-box {
+    box-shadow: 0 0 0 4px $dyneff-primary-12;
+  }
+
+  &-input:checked + &-box {
+    border-color: $dyneff-bg-primary;
+    background-color: $dyneff-bg-primary;
+
+    svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &-label {
+    color: $dyneff-text-soft;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  &__disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover .extranet-checkbox-box {
+      border-color: $dyneff-bg-line;
+    }
+  }
+}
