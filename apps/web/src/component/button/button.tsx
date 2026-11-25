@@ -8,7 +8,7 @@ export default function Button({
   variant = "primary",
   label,
   logo: Icon,
-  logo_direction = "right",
+  logo_direction = "left",
   active,
   disabled,
   className,
@@ -43,14 +43,15 @@ export default function Button({
       `}
       disabled={disabled}
     >
-      {Icon && logo_direction === "right" && (
+      {Icon && logo_direction === "left" && (
         <Icon
           size={size == "s" ? 14 : size == "m" ? 16 : size == "l" ? 18 : 20}
         />
       )}
       {label}
-      {Icon && logo_direction === "left" && (
+      {Icon && logo_direction === "right" && (
         <Icon
+          className="extranet-button-icon-right"
           size={size == "s" ? 14 : size == "m" ? 16 : size == "l" ? 18 : 20}
         />
       )}

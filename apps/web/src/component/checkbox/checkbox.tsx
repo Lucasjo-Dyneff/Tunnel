@@ -6,9 +6,9 @@ import "./checkbox.scss";
 
 export default function Checkbox({
   label,
-  checked,
-  defaultChecked,
+  checked = false,
   onChange,
+  className,
   name,
   value,
   disabled,
@@ -16,8 +16,8 @@ export default function Checkbox({
 }: {
   label?: ReactNode;
   checked?: boolean;
-  defaultChecked?: boolean;
   onChange?: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
   name?: string;
   value?: string;
   disabled?: boolean;
@@ -25,13 +25,18 @@ export default function Checkbox({
 }) {
   return (
     <label
-      className={`extranet-checkbox${disabled ? " extranet-checkbox__disabled" : ""}`}
+      className={[
+        "extranet-checkbox",
+        disabled && "extranet-checkbox__disabled",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       <input
         type="checkbox"
         className="extranet-checkbox-input"
         checked={checked}
-        defaultChecked={defaultChecked}
         onChange={(event) => onChange?.(event.target.checked, event)}
         name={name}
         value={value}

@@ -3,6 +3,10 @@
 $input-padding-x: 14px;
 
 .extranet-input {
+  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+
   &-label {
     display: flex;
     justify-content: space-between;
@@ -60,6 +64,12 @@ $input-padding-x: 14px;
       transition:
         background-color 0.15s ease,
         box-shadow 0.15s ease;
+
+      &::placeholder {
+        color: $dyneff-text-muted-light;
+        font-weight: 400;
+        opacity: 1;
+      }
 
       &-padding {
         &-s {

@@ -1,25 +1,48 @@
 @use "abstracts" as *;
 
 svg {
-  stroke-width: 2.8;
+  stroke-width: 2.4;
 }
 
 .extranet-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.375rem;
   border: 1px solid transparent;
   max-width: max-content;
   font-weight: 700;
   cursor: pointer;
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
   svg {
     flex-shrink: 0;
+    transition: transform 0.3s ease;
   }
 
   &-disabled {
     opacity: 0.42;
+    filter: saturate(0.6);
     cursor: not-allowed;
+    transform: scale(0.98);
+  }
+
+  &:hover:not(&-disabled) &-icon-right {
+    transform: translateX(2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    svg {
+      transition: none;
+    }
   }
 
   /***                       ***/

@@ -6,15 +6,20 @@ export default function Card({
   title,
   subtitle,
   logo: Icon,
+  onClick,
 }: {
   active?: boolean;
   title: string;
   subtitle?: string;
   logo: LucideIcon;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }) {
   return (
     <button
+      type="button"
+      aria-pressed={active}
       className={`extranet-card ${active ? "extranet-card__select" : ""}`}
+      onClick={onClick}
     >
       <div
         className={`extranet-card-logo ${active ? "extranet-card-logo__select" : ""}`}

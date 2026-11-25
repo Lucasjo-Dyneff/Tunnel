@@ -1,12 +1,16 @@
 @use "abstracts" as *;
 
 .extranet-pin {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 5px 12px;
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 700;
   font-family: $font-sans;
   width: max-content;
+  height: max-content;
   border: 1px solid transparent;
 }
 

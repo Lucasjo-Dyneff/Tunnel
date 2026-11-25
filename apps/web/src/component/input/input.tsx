@@ -1,4 +1,4 @@
-import { CSSProperties, useId } from "react";
+import { ChangeEventHandler, CSSProperties, useId } from "react";
 import {
   Check,
   CircleAlert,
@@ -10,7 +10,7 @@ import "./input.scss";
 
 export default function Input({
   label,
-  success,
+  type = "info",
   message,
   size = "s",
   logo: Icon,
@@ -19,9 +19,10 @@ export default function Input({
   placeholder,
   name,
   style,
+  onChange,
 }: {
   label: string;
-  success?: "success" | "error" | "info";
+  type?: "success" | "error" | "info";
   size?: "s" | "m" | "l" | "xl";
   message?: string;
   logo?: LucideIcon;
@@ -30,11 +31,12 @@ export default function Input({
   defaultValue?: string;
   name?: string;
   style?: CSSProperties;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }) {
   const id = useId();
 
   return (
-    <>
+    <div className="extranet-input">
       <label htmlFor={id} className="extranet-input-label">
         {label}
       </label>
@@ -47,14 +49,17 @@ export default function Input({
           name={name}
           placeholder={placeholder}
           style={style}
-          className={`extranet-input-wrapper-field${success ? ` extranet-input-wrapper-field-${success}` : ""} ${Icon ? `extranet-input-wrapper-field-padding-${size}` : ""} extranet-input-wrapper-field-${size}`}
+          onChange={onChange}
+          className={`
+            extranet-input-wrapper-field
+            ${type ? `extranet-input-wrapper-field-${type}` : ""}
+            ${Icon ? `extranet-input-wrapper-field-padding-${size}` : ""}
+            extranet-input-wrapper-field-${size}
+          `}
         />
-        {success === "success" && (
+        {type === "success" && (
           <span className="extranet-input-logSuccess" aria-hidden>
-            <Check
-              className={`extranet-input-logSuccess-${success}`}
-              size="72%"
-            />
+            <Check className={`extranet-input-logSuccess-${type}`} size="72%" />
           </span>
         )}
 
@@ -69,11 +74,11 @@ export default function Input({
 
       {message && (
         <p
-          className={`extranet-input-message${success ? ` extranet-input-message-${success}` : ""} extranet-input-message-${size}`}
+          className={`extranet-input-message${type ? ` extranet-input-message-${type}` : ""} extranet-input-message-${size}`}
         >
-          {success === "success" ? (
+          {type === "success" ? (
             <CircleCheck size="1em" />
-          ) : success === "error" ? (
+          ) : type === "error" ? (
             <CircleAlert size="1em" />
           ) : (
             <Info size="1em" />
@@ -81,6 +86,6 @@ export default function Input({
           {message}
         </p>
       )}
-    </>
+    </div>
   );
 }
