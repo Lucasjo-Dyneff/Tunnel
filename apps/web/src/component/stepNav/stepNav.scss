@@ -1,0 +1,142 @@
+@use "abstracts" as *;
+
+$step-node-size: 2.125rem;
+$step-track-height: 2px;
+
+.extranet-stepNav {
+  &-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--step-count), minmax(0, 1fr));
+    padding: 0;
+    list-style: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(#{$step-node-size} / 2 - #{$step-track-height} / 2);
+      left: calc(100% / var(--step-count) / 2);
+      height: $step-track-height;
+    }
+
+    &::before {
+      right: calc(100% / var(--step-count) / 2);
+      background-color: $dyneff-bg-line;
+    }
+
+    &::after {
+      width: calc((100% - 100% / var(--step-count)) * var(--step-progress));
+      background: linear-gradient(
+        90deg,
+        $dyneff-bg-green 0 var(--step-green-stop),
+        $dyneff-bg-primary var(--step-green-stop) 100%
+      );
+      transition: width 0.3s ease;
+    }
+  }
+
+  &-step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+
+    &__done {
+      .extranet-stepNav-node {
+        border-color: $dyneff-bg-green;
+        background-color: $dyneff-bg-green;
+        color: $dyneff-text-on-primary;
+      }
+
+      .extranet-stepNav-label {
+        color: $dyneff-bg-green-deep;
+      }
+
+      button.extranet-stepNav-button {
+        cursor: pointer;
+
+        &:hover .extranet-stepNav-node {
+          border-color: $dyneff-bg-green-deep;
+          background-color: $dyneff-bg-green-deep;
+        }
+
+        &:hover .extranet-stepNav-label {
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+
+        &:focus-visible {
+          outline: none;
+
+          .extranet-stepNav-node {
+            box-shadow: 0 0 0 4px $dyneff-bg-green-soft;
+          }
+        }
+      }
+    }
+
+    &__active {
+      .extranet-stepNav-node {
+        border-color: $dyneff-bg-primary;
+        background-color: $dyneff-bg-primary;
+        color: $dyneff-text-on-primary;
+        box-shadow: 0 0 0 5px $dyneff-primary-12;
+      }
+
+      .extranet-stepNav-label {
+        color: $dyneff-text-ink;
+      }
+    }
+
+    &__todo {
+      .extranet-stepNav-node {
+        border-color: $dyneff-bg-line;
+        color: $dyneff-text-muted-light;
+      }
+
+      .extranet-stepNav-label {
+        color: $dyneff-text-muted-light;
+      }
+    }
+  }
+
+  &-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: center;
+    color: inherit;
+  }
+
+  &-node {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $step-node-size;
+    height: $step-node-size;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: $dyneff-bg-surface;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    transition:
+      background-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  &-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+
+    @include up(md) {
+      font-size: 0.875rem;
+    }
+  }
+}
