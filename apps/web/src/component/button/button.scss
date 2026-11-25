@@ -13,6 +13,10 @@ svg {
   font-weight: 700;
   cursor: pointer;
 
+  svg {
+    flex-shrink: 0;
+  }
+
   &-disabled {
     opacity: 0.42;
     cursor: not-allowed;

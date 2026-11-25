@@ -43,6 +43,9 @@ $dyneff-bg-surface: #ffffff;
 // Fond général de page
 $dyneff-bg-canvas: #f4f7f9;
 
+// Fond translucide du header collant (blanc bleuté à 90 %)
+$dyneff-bg-header: #fcfeffe6;
+
 // Fond d'un panneau secondaire
 $dyneff-surface-warm: #fbfdfe;
 
@@ -141,6 +144,9 @@ $dyneff-text-on-primary: #ffffff;
 // ============================================
 $dyneff-shadow-primary: 0 16px 32px -16px #0098d280;
 $dyneff-shadow-accent: 0 14px 28px -16px #f39200b3;
+
+// Ombre discrète sous le header collant
+$dyneff-shadow-header: 0 10px 24px -22px #10304966;
 
 // Opacité des halos de champ : 1a en hexadécimal = 26/255 ≈ 10 %
 $dyneff-halo-alpha: math.div(26, 255);

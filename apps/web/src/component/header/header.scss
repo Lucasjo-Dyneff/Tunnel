@@ -1,0 +1,29 @@
+@use "abstracts" as *;
+
+.extranet-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: grid;
+  grid-template-columns:
+    minmax(max-content, 1fr)
+    8fr
+    minmax(max-content, 1fr);
+  column-gap: 1.5rem;
+  align-items: center;
+  padding: 1rem 24rem 1rem 24rem;
+  border-bottom: 1px solid $dyneff-bg-line;
+  background-color: $dyneff-bg-header;
+  backdrop-filter: blur(8px);
+  box-shadow: $dyneff-shadow-header;
+
+  > :first-child {
+    justify-self: start;
+  }
+
+  > :last-child {
+    justify-self: end;
+    white-space: nowrap;
+  }
+}
