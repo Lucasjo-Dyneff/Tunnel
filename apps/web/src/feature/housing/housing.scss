@@ -1,0 +1,251 @@
+@use "abstracts" as *;
+
+.app-housing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+
+  @include up(lg) {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 1.75rem;
+  }
+
+  &-main {
+    padding: 1.25rem;
+
+    @include up(md) {
+      padding: 1.75rem;
+    }
+
+    border: 1px solid $dyneff-bg-line;
+    border-radius: 22px;
+    background-color: $dyneff-bg-surface;
+    width: 100%;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      &__pin {
+        margin-top: 0.375rem;
+      }
+    }
+
+    &-step {
+      margin-top: 1.75rem;
+
+      &-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+
+        @include up(md) {
+          flex-direction: row;
+        }
+
+        margin-top: 0.75rem;
+        margin-bottom: 2rem;
+      }
+
+      &-h2 {
+        font-size: 1.1875rem;
+      }
+
+      &-p {
+        margin-top: 0.375rem;
+      }
+
+      &-input {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        @include up(sm) {
+          flex-direction: row;
+        }
+
+        margin-top: 1rem;
+      }
+
+      &-rgbpd {
+        display: flex;
+        align-items: start;
+        gap: 0.75rem;
+        margin-top: 1.75rem;
+
+        &__check {
+          margin-top: 0.25rem;
+        }
+
+        &__btn {
+          text-align: left;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        &__why {
+          display: inline;
+          padding: 0;
+          border: none;
+          background: none;
+          font-size: inherit;
+          line-height: inherit;
+          text-align: left;
+          cursor: pointer;
+          color: $dyneff-bg-primary-deep;
+          font-weight: 600;
+          text-decoration: underline 1px transparent;
+          text-underline-offset: 0.375rem;
+          transition:
+            color 0.15s ease,
+            text-decoration-color 0.15s ease;
+
+          &:hover {
+            color: $dyneff-bg-primary;
+            text-decoration-color: currentColor;
+          }
+        }
+
+        &-footer {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: stretch;
+          gap: 1rem;
+
+          > .extranet-button {
+            max-width: none;
+            justify-content: center;
+          }
+
+          @include up(sm) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            > .extranet-button {
+              max-width: max-content;
+            }
+          }
+
+          margin-top: 1.25rem;
+          padding-top: 1.25rem;
+          border-top: 1px solid $dyneff-bg-line;
+
+          &__question {
+            display: inline;
+            text-align: left;
+            cursor: pointer;
+            color: $dyneff-bg-primary-deep;
+            font-weight: 600;
+            text-decoration: underline 1px transparent;
+            text-underline-offset: 0.375rem;
+            transition:
+              color 0.15s ease,
+              text-decoration-color 0.15s ease;
+
+            &:hover {
+              color: $dyneff-bg-primary;
+              text-decoration-color: currentColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include up(lg) {
+      position: sticky;
+      top: 7.5rem;
+      align-self: start;
+    }
+
+    &-global {
+      &-bloc {
+        width: 100%;
+        padding: 1.25rem;
+        background-color: $dyneff-bg-surface;
+        border: 1px solid $dyneff-bg-line;
+        border-radius: 18px;
+
+        &-title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &__text {
+            font-size: 1rem;
+          }
+        }
+        &-element {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    &-change {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0;
+      margin: 0;
+
+      &__li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 0.5rem;
+      }
+    }
+
+    &-simulation {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 0.65rem;
+
+      &-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 0.75rem;
+        background-color: $dyneff-bg-primary-soft;
+        color: $dyneff-bg-primary-deep;
+      }
+
+      &__border {
+        border-top: 1px solid $dyneff-bg-line;
+        padding-top: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      &__element {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-call {
+    width: 100% !important;
+
+    &__btn {
+      width: 100%;
+      max-width: none;
+      margin-top: 0.75rem;
+    }
+  }
+}
