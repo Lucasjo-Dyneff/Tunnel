@@ -1,0 +1,113 @@
+@use "abstracts" as *;
+
+.extranet-address {
+  // Référence pour positionner la liste sous le champ
+  .extranet-input-wrapper {
+    position: relative;
+  }
+
+  // Indicateur de chargement, à droite dans le champ
+  &-loader {
+    justify-self: end;
+    align-self: center;
+    display: flex;
+    margin-right: 14px;
+    color: $dyneff-text-muted-light;
+    pointer-events: none;
+    animation: extranet-address-spin 0.8s linear infinite;
+  }
+
+  // Liste des suggestions
+  &-list {
+    position: absolute;
+    top: calc(100% + 0.375rem);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    max-height: 18rem;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.375rem;
+    list-style: none;
+    border: 1px solid $dyneff-bg-line;
+    border-radius: 14px;
+    background-color: $dyneff-bg-surface;
+    box-shadow: $dyneff-shadow-dropdown;
+    animation: extranet-address-open 0.15s ease;
+  }
+
+  &-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &__active {
+      background-color: $dyneff-bg-primary-tint;
+    }
+
+    &__icon {
+      flex-shrink: 0;
+      color: $dyneff-text-orange;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    &__street {
+      overflow: hidden;
+      color: $dyneff-text-ink;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &__city {
+      color: $dyneff-text-muted;
+      font-family: $font-inter;
+      font-size: 0.8125rem;
+    }
+  }
+
+  &-empty {
+    padding: 0.75rem;
+    color: $dyneff-text-muted;
+    font-size: 0.875rem;
+  }
+
+  // Astuce en bas de la liste
+  &-hint {
+    margin-top: 0.25rem;
+    padding: 0.625rem 0.75rem 0.375rem;
+    border-top: 1px solid $dyneff-bg-line-soft;
+    color: $dyneff-text-muted;
+    font-family: $font-inter;
+    font-size: 0.75rem;
+  }
+}
+
+@keyframes extranet-address-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes extranet-address-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .extranet-address-loader,
+  .extranet-address-list {
+    animation: none;
+  }
+}
