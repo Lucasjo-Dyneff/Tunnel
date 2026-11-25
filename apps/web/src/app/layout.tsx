@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "@/styles/globals.scss";
+import Header from "@/component/header/header";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="fr"
       className={`${plusJakartaSans.variable} ${inter.variable} ${geistMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main className="app-main">{children}</main>
+      </body>
     </html>
   );
 }

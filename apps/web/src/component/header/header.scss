@@ -12,7 +12,7 @@
     minmax(max-content, 1fr);
   column-gap: 1.5rem;
   align-items: center;
-  padding: 1rem 24rem 1rem 24rem;
+  padding: 1rem $page-padding-x;
   border-bottom: 1px solid $dyneff-bg-line;
   background-color: $dyneff-bg-header;
   backdrop-filter: blur(8px);

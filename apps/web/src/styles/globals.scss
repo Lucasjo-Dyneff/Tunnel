@@ -53,6 +53,14 @@ select {
   font: inherit;
 }
 
+// Zone de contenu sous le header : fond de page + marges latérales.
+// Le header est en dehors de <main>, il n'est donc pas affecté.
+.app-main {
+  flex: 1;
+  padding-inline: $page-padding-x;
+  background-color: $dyneff-bg-canvas;
+}
+
 .dyneff-font-inter {
   font-family: $font-inter;
 }
