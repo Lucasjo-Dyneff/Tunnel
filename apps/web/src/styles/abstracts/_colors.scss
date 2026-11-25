@@ -28,6 +28,12 @@ $dyneff-bg-primary-soft: #e4f4fb;
 // Carte sélectionnée, bulle d'information
 $dyneff-bg-primary-tint: #f1fafe;
 
+// Bordure d'une bulle d'information
+$dyneff-primary-line: #d7edf8;
+
+// Bordure d'une pastille d'information
+$dyneff-primary-line-strong: #cbeaf7;
+
 // Anneau de focus, halo d'un élément actif
 $dyneff-primary-12: #0098d21f;
 
@@ -45,6 +51,9 @@ $dyneff-bg-line: #e2ebf1;
 
 // Séparateurs discrets, ombres internes
 $dyneff-bg-line-soft: #eef4f8;
+
+// Fond d'une pastille neutre (étape à venir)
+$dyneff-bg-neutral-soft: #f1f5f8;
 
 // --- COULEURS CHAUDES ---
 
@@ -65,6 +74,15 @@ $dyneff-text-orange: #8a4a00;
 
 // Bordure d'un encart d'accroche
 $dyneff-orange-line: #fbd9a5;
+
+// Bordure du bouton « usefulness »
+$dyneff-peach-line: #ffe2c4;
+
+// Fond d'une bulle d'avertissement, pastille « recommandé »
+$dyneff-bg-orange-soft: #fff4e3;
+
+// Bordure d'une case non cochée sur fond crème
+$dyneff-warm-line: #e6d8c6;
 // --- COULEURS SUCCESS ---
 
 // Pastille d'étape terminée, coche de champ valide

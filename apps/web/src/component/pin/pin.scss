@@ -13,7 +13,7 @@
 .extranet-pin-info {
   background-color: $dyneff-bg-primary-soft;
   color: $dyneff-bg-primary-deep;
-  border-color: #cbeaf7;
+  border-color: $dyneff-primary-line-strong;
 }
 
 .extranet-pin-success {
@@ -23,13 +23,13 @@
 }
 
 .extranet-pin-recommanded {
-  background-color: #fff4e3;
+  background-color: $dyneff-bg-orange-soft;
   color: $dyneff-text-orange;
   border-color: $dyneff-orange-line;
 }
 
 .extranet-pin-incoming {
-  background-color: #f1f5f8;
+  background-color: $dyneff-bg-neutral-soft;
   color: $dyneff-text-muted;
   border-color: $dyneff-bg-line;
 }

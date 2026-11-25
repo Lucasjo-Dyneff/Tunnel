@@ -1,6 +1,13 @@
 @use "abstracts" as *;
 
+svg {
+  stroke-width: 2.8;
+}
+
 .extranet-button {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
   border: 1px solid transparent;
   max-width: max-content;
   font-weight: 700;
@@ -32,6 +39,26 @@
     &:hover:not(.extranet-button-disabled) {
       background-color: $dyneff-bg-primary-hover;
     }
+
+    &__selected {
+      background-color: $dyneff-bg-primary-hover;
+    }
+  }
+
+  &-usefulness {
+    background-color: $dyneff-bg-peach;
+    color: $dyneff-text-orange;
+    border-color: $dyneff-peach-line;
+    border-radius: 9999px !important;
+
+    &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-orange;
+    }
+
+    &__selected {
+      background-color: $dyneff-bg-orange;
+      color: $dyneff-bg-surface;
+    }
   }
 
   &-secondary {
@@ -40,6 +67,11 @@
     border-color: $dyneff-bg-line;
 
     &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-primary-tint;
+      border-color: $dyneff-bg-primary;
+    }
+
+    &__selected {
       background-color: $dyneff-bg-primary-tint;
       border-color: $dyneff-bg-primary;
     }
@@ -52,6 +84,10 @@
     &:hover:not(.extranet-button-disabled) {
       background-color: $dyneff-bg-orange-hover;
     }
+
+    &__selected {
+      background-color: $dyneff-bg-orange-hover;
+    }
   }
 
   &-dark {
@@ -61,6 +97,10 @@
     &:hover:not(.extranet-button-disabled) {
       background-color: $dyneff-bg-dark-hover;
     }
+
+    &__selected {
+      background-color: $dyneff-bg-dark-hover;
+    }
   }
 
   &-ghost {
@@ -68,6 +108,10 @@
     color: $dyneff-bg-primary-deep;
 
     &:hover:not(.extranet-button-disabled) {
+      background-color: $dyneff-bg-primary-soft;
+    }
+
+    &__selected {
       background-color: $dyneff-bg-primary-soft;
     }
   }

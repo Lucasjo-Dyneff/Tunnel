@@ -34,11 +34,11 @@
 
   &-info {
     background-color: $dyneff-bg-primary-tint;
-    border-color: #d7edf8;
+    border-color: $dyneff-primary-line;
   }
 
   &-warning {
-    background-color: #fff4e3;
+    background-color: $dyneff-bg-orange-soft;
     border-color: $dyneff-orange-line;
   }
 
