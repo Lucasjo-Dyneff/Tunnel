@@ -1,0 +1,338 @@
+@use "abstracts" as *;
+
+.app-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+
+  @include up(lg) {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 1.75rem;
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & > :first-child {
+      padding: 1.25rem;
+
+      @include up(md) {
+        padding: 1.75rem;
+      }
+
+      border: 1px solid $dyneff-bg-line;
+      border-radius: 22px;
+      background-color: $dyneff-bg-surface;
+      width: 100%;
+    }
+
+    &-reliability {
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      width: max-content;
+      border: 1px solid $dyneff-bg-line-soft;
+      margin-top: 1rem;
+
+      &__progress {
+        border-radius: 9999px;
+        background-color: #e8eef4;
+        width: 100%;
+        height: 0.375rem;
+        margin-top: 0.5rem;
+        overflow: hidden;
+
+        &::after {
+          content: "";
+          display: block;
+          height: 100%;
+          width: var(--progress, 0%);
+          border-radius: inherit;
+          background-color: var(--progress-color, #{$dyneff-bg-primary});
+          transition: width 0.4s ease;
+          animation: reliability-progress-fill 1s cubic-bezier(0.22, 1, 0.36, 1)
+            0.2s both;
+
+          @media (prefers-reduced-motion: reduce) {
+            animation: none;
+          }
+        }
+
+        &--80 {
+          --progress: 80%;
+          --progress-color: #{$dyneff-bg-green};
+        }
+
+        &--60 {
+          --progress: 60%;
+          --progress-color: #{$dyneff-bg-warning};
+        }
+
+        &--20 {
+          --progress: 20%;
+          --progress-color: #{$dyneff-bg-error};
+        }
+      }
+    }
+
+    &-proposals {
+      --proposal-gap: 1rem;
+      --proposal-min: 14rem;
+
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(
+          max(var(--proposal-min), calc((100% - 2 * var(--proposal-gap)) / 3)),
+          1fr
+        )
+      );
+      gap: var(--proposal-gap);
+      margin-top: 1.5rem;
+    }
+
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      padding: 1rem;
+      background-color: $dyneff-bg-orange-soft;
+      border-color: $dyneff-orange-line;
+
+      &-text {
+        color: $dyneff-text-soft;
+
+        &__energy {
+          color: $dyneff-text-ink;
+          font-weight: 500;
+        }
+      }
+
+      &-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $dyneff-bg-surface;
+        color: $dyneff-text-orange;
+        border: 1px solid #e1e7ef;
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include up(lg) {
+      position: sticky;
+      top: 7.5rem;
+      align-self: start;
+    }
+
+    &-container {
+      width: 100%;
+      padding: 1.25rem;
+      background-color: $dyneff-bg-surface;
+      border: 1px solid $dyneff-bg-line;
+      border-radius: 18px;
+
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__text {
+          font-size: 1rem;
+          margin-bottom: 0.25rem;
+        }
+      }
+
+      &-description {
+        color: $dyneff-text-ink;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      &-btn {
+        width: 100%;
+        max-width: none;
+        margin-top: 1rem;
+      }
+
+      &-commitment {
+        text-align: center;
+        margin-top: 0.75rem;
+      }
+
+      &-decided {
+        margin-top: 0.5rem;
+      }
+
+      &-quote {
+        width: 100%;
+        max-width: none;
+        margin-top: 1rem;
+      }
+
+      &-compare {
+        display: flex;
+        width: fit-content;
+        margin: 0.75rem auto 0;
+      }
+    }
+  }
+
+  &-view {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+
+    @include up(md) {
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    }
+
+    &-detail,
+    &-signature {
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      border: 1px solid $dyneff-bg-line;
+      border-radius: 22px;
+      background-color: $dyneff-bg-surface;
+
+      @include up(md) {
+        padding: 1.5rem;
+      }
+    }
+
+    &-detail {
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+
+        &__text {
+          letter-spacing: -0.015em;
+          font-size: 1.1875rem;
+          font-weight: 700;
+          line-height: 1.3;
+        }
+      }
+
+      &-subscription {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 0.75rem;
+      }
+
+      &-consumption {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+        padding: 0.75rem 0;
+        border-top: 1px dashed $dyneff-bg-line;
+        border-bottom: 1px dashed $dyneff-bg-line;
+
+        .app-offer-view-detail-subscription {
+          padding-bottom: 0;
+        }
+      }
+
+      &-price {
+        flex-shrink: 0;
+        white-space: nowrap;
+        text-align: right;
+        color: $dyneff-text-ink;
+        font-weight: 700;
+      }
+
+      &-total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+        margin-top: 0.75rem;
+        background-color: $dyneff-bg-primary-tint;
+        border-radius: 0.75rem;
+
+        &__text {
+          letter-spacing: -0.01em;
+          font-size: 1rem;
+          font-weight: 700;
+          line-height: 1.35;
+        }
+
+        &__price {
+          flex-shrink: 0;
+          white-space: nowrap;
+          font-weight: 800;
+          font-size: 1.25rem;
+          letter-spacing: -0.02em;
+          color: $dyneff-bg-primary-deep;
+        }
+      }
+
+      &-ttc {
+        margin-top: 1rem;
+
+        &__adjust {
+          margin-top: 0.875rem;
+        }
+      }
+
+      &-why {
+        margin-top: 0.625rem;
+      }
+    }
+
+    &-signature {
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+        list-style: none;
+        padding: 0;
+        margin-top: 1.25rem;
+
+        &__li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          font-size: 0.9375rem;
+          line-height: 1.6;
+          color: $dyneff-text-soft;
+        }
+
+        &__logo {
+          flex-shrink: 0;
+          margin-top: calc((1.6em - 16px) / 2);
+        }
+      }
+    }
+
+    &-description {
+      margin-top: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes reliability-progress-fill {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--progress, 0%);
+  }
+}
