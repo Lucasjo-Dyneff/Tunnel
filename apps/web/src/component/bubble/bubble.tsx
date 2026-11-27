@@ -11,7 +11,7 @@ export default function Bubble({
 }: {
   title: string;
   children?: ReactNode;
-  className: string;
+  className?: string;
   logo?: LucideIcon;
   type?: "neutral" | "info" | "success" | "warning";
 }) {
