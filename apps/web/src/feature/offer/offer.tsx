@@ -45,7 +45,7 @@ export default function OfferFeature() {
     <div className="app-offer">
       <div className="app-offer-main">
         <div>
-          <h1>Votre offre personnalisée</h1>
+          <h1 className="dyneff-h1">Votre offre personnalisée</h1>
           <p className="dyneff-subtitle-m">
             Électricité · 6 kVA · Heures creuses · •••• •••• 8942
           </p>
@@ -72,9 +72,7 @@ export default function OfferFeature() {
           <div className="app-offer-view">
             <div className="app-offer-view-detail">
               <div className="app-offer-view-detail-title">
-                <h2 className="app-offer-view-detail-title__text">
-                  Détail de l'offre
-                </h2>
+                <h2 className="dyneff-h4">Détail de l'offre</h2>
                 <Pin label="Prix fix 1 an" />
               </div>
               <div className="app-offer-view-detail-subscription">
@@ -121,9 +119,7 @@ export default function OfferFeature() {
             </div>
 
             <div className="app-offer-view-signature">
-              <h2 className="app-offer-view-detail-title__text">
-                Ce que vous signez
-              </h2>
+              <h2 className="dyneff-h4">Ce que vous signez</h2>
 
               <ul className="app-offer-view-signature-list">
                 <li className="app-offer-view-signature-list__li">
@@ -187,9 +183,7 @@ export default function OfferFeature() {
       <div className="app-offer-info">
         <div className="app-offer-info-container">
           <div className="app-offer-info-container-title">
-            <h2 className="app-offer-info-container-title__text">
-              Votre choix
-            </h2>
+            <h2 className="dyneff-h5">Votre choix</h2>
             <Zap size={16} color="#05688c" />
           </div>
           <p className="app-offer-info-container-description dyneff-p-s">
@@ -212,9 +206,7 @@ export default function OfferFeature() {
         </div>
 
         <div className="app-offer-info-container">
-          <h2 className="app-offer-info-container-title__text">
-            Pas encore décidé ?
-          </h2>
+          <h2 className="dyneff-h5">Pas encore décidé ?</h2>
 
           <p className="app-offer-info-container-decided dyneff-p-xs">
             Recevez le récapitulatif et comparez tranquillement.

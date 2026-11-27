@@ -76,7 +76,7 @@ export default function Housing() {
       <div className="app-housing-main">
         <div className="app-housing-main-title">
           <div className="app-housing-main-title__content">
-            <h1>Trouvons votre compteur</h1>
+            <h1 className="dyneff-h1">Trouvons votre compteur</h1>
             <p className="dyneff-subtitle-l">
               30 secondes, sans avoir besoin de votre facture.
             </p>
@@ -90,7 +90,7 @@ export default function Housing() {
         </div>
 
         <div className="app-housing-main-step">
-          <h2 className="app-housing-main-step-h2">Quelle énergie ?</h2>
+          <h2 className="dyneff-h4">Quelle énergie ?</h2>
           <p className="dyneff-p-xs app-housing-main-step-p">
             Vous pouvez souscrire aux deux en une seule démarche.
           </p>
@@ -126,7 +126,7 @@ export default function Housing() {
             />
           </div>
 
-          <h2 className="app-housing-main-step-h2">Votre situation</h2>
+          <h2 className="dyneff-h4">Votre situation</h2>
           <div className="app-housing-main-step-container">
             <Card
               title="Je change de fournisseur"
@@ -152,9 +152,7 @@ export default function Housing() {
             />
           </div>
 
-          <h2 className="app-housing-main-step-h2">
-            Estimation de votre consommation
-          </h2>
+          <h2 className="dyneff-h4">Estimation de votre consommation</h2>
           <p className="dyneff-p-xs app-housing-main-step-p">
             Le compteur donne l'estimation la plus juste. L'adresse suffit pour
             démarrer.
@@ -282,9 +280,7 @@ export default function Housing() {
         <div className="app-housing-info-global">
           <div className="app-housing-info-global-bloc">
             <div className="app-housing-info-global-bloc-title">
-              <h2 className="app-housing-info-global-bloc-title__text">
-                Votre simulation
-              </h2>
+              <h2 className="dyneff-h5">Votre simulation</h2>
               <Pin label="En cours" type="incoming" />
             </div>
             <div className="app-housing-info-global-bloc-element">
@@ -333,9 +329,7 @@ export default function Housing() {
 
         <div className="app-housing-info-global">
           <div className="app-housing-info-global-bloc">
-            <h2 className="app-housing-info-global-bloc-title__text">
-              Changer, c'est simple
-            </h2>
+            <h2 className="dyneff-h5">Changer, c'est simple</h2>
             <div className="app-housing-info-global-bloc-element">
               <ul className="app-housing-info-change">
                 <li className="app-housing-info-change__li dyneff-p-xs">
