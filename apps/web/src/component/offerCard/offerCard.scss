@@ -1,0 +1,150 @@
+@use "abstracts" as *;
+
+.extranet-offerCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.25rem;
+  text-align: left;
+  font: inherit;
+  color: $dyneff-text-ink;
+  background-color: $dyneff-bg-surface;
+  border: 1.5px solid $dyneff-bg-line;
+  border-radius: 18px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: $dyneff-primary-line-strong;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $dyneff-bg-primary;
+    outline-offset: 2px;
+  }
+
+  &--selected {
+    border-color: $dyneff-bg-primary;
+    background-color: $dyneff-bg-primary-tint;
+    box-shadow: 0 0 0 4px $dyneff-primary-12;
+
+    &:hover {
+      border-color: $dyneff-bg-primary;
+    }
+  }
+
+  &-badge {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    transform: translateY(-50%);
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: $dyneff-shadow-accent;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    border: 1.5px solid $dyneff-bg-line;
+    background-color: $dyneff-bg-surface;
+    color: $dyneff-text-on-primary;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+
+    svg {
+      opacity: 0;
+      transform: scale(0.6);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+  }
+
+  &:hover &-check {
+    border-color: $dyneff-primary-line-strong;
+  }
+
+  &--selected &-check,
+  &--selected:hover &-check {
+    border-color: $dyneff-bg-primary;
+    background-color: $dyneff-bg-primary;
+
+    svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__subtitle {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: $dyneff-text-muted;
+  }
+
+  &-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.375rem;
+    margin-top: 1rem;
+
+    &__unit {
+      font-size: 0.875rem;
+      color: $dyneff-text-muted;
+    }
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e1e7ef;
+    border-radius: 10px;
+    background-color: $dyneff-bg-surface;
+    color: $dyneff-bg-primary-deep;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  &__title {
+    margin-top: 0.75rem;
+    letter-spacing: -0.01em;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  &__info {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 0.875rem;
+    border-top: 1px dashed $dyneff-bg-line;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: $dyneff-text-muted;
+  }
+}
